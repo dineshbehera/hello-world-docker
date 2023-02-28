@@ -1,0 +1,10 @@
+
+cd C:\Project\ATS\workspace\sts4\hello-world-docker
+
+mvn clean package
+
+java -jar target/hello-world-docker-0.0.1-SNAPSHOT.jar
+
+docker build -t hello-world-spring-boot:1.0 .
+
+docker run -d -p 8080:8080 -p 443:8443 -t hello-world-spring-boot:1.0
